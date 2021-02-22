@@ -28,6 +28,7 @@ User
                                             <th>ID</th>
                                             <th>Nama</th>
                                             <th>Email</th>
+                                            <th>Photo</th>
                                             <th>Roles</th>
                                             <th>Aksi</th>
                                         </tr>
@@ -66,6 +67,10 @@ User
             {
                 data: 'email',
                 name: 'email '
+            },
+            {
+                data: 'photo',
+                name: 'photo'
             },
             {
                 data: 'roles',

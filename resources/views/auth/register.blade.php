@@ -36,8 +36,6 @@
                                     value="{{ old('email') }}" 
                                     required autocomplete="email">
 
-
-
                         @error('email')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -171,8 +169,8 @@
             },
             data() {
                 return {
-                    name: "Angga Hazza Sett",
-                    email: "kamujagoan@bwa.id",
+                    name: "",
+                    email: "",
                     email_unavailable: false,
                     is_store_open: true,
                     store_name: "",

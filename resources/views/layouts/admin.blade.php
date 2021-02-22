@@ -54,7 +54,7 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">
-                                    <img src="/images/icon-user.png" alt=""
+                                    <img src="{{ Storage::url(Auth::user()->photo) }}"
                                         class="rounded-circle mr-2 profile-picture" />
                                     Hi, {{ Auth::user()->name }}
                                 </a>

@@ -50,6 +50,9 @@ class UserController extends Controller
                         </div>
                     ';
                 })
+                 ->editColumn('photo', function($item) {
+                    return $item->photo ? '<img src="'. Storage::url($item->photo) .'" style="max-height: 50px" />' : '';
+                })
                 ->rawColumns(['action', 'photo'])
                 ->make();
         }
@@ -78,6 +81,7 @@ class UserController extends Controller
         $data = $request->all();
 
         $data['password'] = bcrypt($request->password);
+        $data['photo'] = $request->file('photo')->store('assets/users', 'public');
 
         User::create($data);
 
@@ -120,6 +124,8 @@ class UserController extends Controller
     public function update(UserRequest $request, $id)
     {
         $data = $request->all();
+        
+        $data['photo'] = $request->file('photo')->store('assets/users', 'public');
 
         $item = User::findOrFail($id);
 
